@@ -1,0 +1,326 @@
+风险内容位置：
+    CommitId: 3ffb0832a060e3a0b69f4d822243eb004a6619aa
+    文件名：.idea/jarRepositories.xml
+    文件行：1~20
+风险内容：
+    <?xml version="1.0" encoding="UTF-8"?>
+    <project version="4">
+      <component name="RemoteRepositoriesConfiguration">
+        <remote-repository>
+          <option name="id" value="central" />
+          <option name="name" value="Central Repository" />
+          <option name="url" value="http://maven.aliyun.com/nexus/content/groups/public/" />
+        </remote-repository>
+        <remote-repository>
+          <option name="id" value="central" />
+          <option name="name" value="Maven Central repository" />
+          <option name="url" value="https://repo1.maven.org/maven2" />
+        </remote-repository>
+        <remote-repository>
+          <option name="id" value="jboss.community" />
+          <option name="name" value="JBoss Community repository" />
+          <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+        </remote-repository>
+      </component>
+    </project>
+风险细节：
+    敏感类型：URL地址(url)
+    敏感细节：{hitWord=https://repository.jboss.org/nexus/content/repositories/public/}
+风险内容位置：
+    CommitId: c340626fa81e16aca52f5e75e46e62d11a0e8611
+    文件名：pom.xml
+    文件行：2
+风险内容：
+    <?xml version="1.0" encoding="UTF-8"?>
+    <project xmlns="http://maven.apache.org/POM/4.0.0"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+        <modelVersion>4.0.0</modelVersion>
+    
+        <parent>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-parent</artifactId>
+            <version>2.6.3</version>
+            <relativePath/> <!-- lookup parent from repository -->
+        </parent>
+    
+        <groupId>org.corgi</groupId>
+        <artifactId>source_download_consumer</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    
+        <properties>
+            <maven.compiler.source>8</maven.compiler.source>
+            <maven.compiler.target>8</maven.compiler.target>
+        </properties>
+    
+        <dependencies>
+            <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-aws-messaging -->
+    
+            <dependency>
+                <groupId>com.amazonaws</groupId>
+                <artifactId>amazon-sqs-java-messaging-lib</artifactId>
+                <version>1.0.8</version>
+            </dependency>
+    
+            <!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-s3 -->
+            <dependency>
+                <groupId>com.amazonaws</groupId>
+                <artifactId>aws-java-sdk-s3</artifactId>
+                <version>1.12.173</version>
+            </dependency>
+    
+    
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.junit.vintage</groupId>
+                        <artifactId>junit-vintage-engine</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+    
+            <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.22</version>
+                <scope>provided</scope>
+            </dependency>
+    
+            <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.12.0</version>
+            </dependency>
+    
+            <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>2.9.0</version>
+            </dependency>
+    
+            <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-compress -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-compress</artifactId>
+                <version>1.20</version>
+            </dependency>
+    
+            <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>2.11.0</version>
+            </dependency>
+    
+            <dependency>
+                <groupId>org.tukaani</groupId>
+                <artifactId>xz</artifactId>
+                <version>1.8</version>
+            </dependency>
+    
+            <dependency>
+                <groupId>org.apache.ant</groupId>
+                <artifactId>ant</artifactId>
+                <version>1.7.1</version>
+            </dependency>
+    
+            <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-collections4 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>4.4</version>
+            </dependency>
+    
+            <dependency>
+                <groupId>cpdetector</groupId>
+                <artifactId>cpdetector</artifactId>
+                <version>1.0.10</version>
+                <scope>system</scope>
+                <systemPath>${basedir}/lib/cpdetector_1.0.10.jar</systemPath>
+            </dependency>
+    
+            <dependency>
+                <groupId>chardet</groupId>
+                <artifactId>chardet</artifactId>
+                <version>1.0</version>
+                <scope>system</scope>
+                <systemPath>${basedir}/lib/ext/chardet-1.0.jar</systemPath>
+            </dependency>
+    
+            <dependency>
+                <groupId>antlr</groupId>
+                <artifactId>antlr</artifactId>
+                <version>2.7.4</version>
+                <scope>system</scope>
+                <systemPath>${basedir}/lib/ext/antlr-2.7.4.jar</systemPath>
+            </dependency>
+    
+    
+            <dependency>
+                <groupId>com.aliyun.oss</groupId>
+                <artifactId>aliyun-sdk-oss</artifactId>
+                <version>3.10.2</version>
+            </dependency>
+    
+        </dependencies>
+    
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                </plugin>
+            </plugins>
+        </build>
+    
+    </project>
+风险细节：
+    敏感类型：URL地址(url)
+    敏感细节：{hitWord=https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-aws-messaging}
+{hitWord=https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-s3}
+{hitWord=https://mvnrepository.com/artifact/org.projectlombok/lombok}
+{hitWord=https://mvnrepository.com/artifact/org.apache.commons/commons-lang3}
+{hitWord=https://mvnrepository.com/artifact/com.google.code.gson/gson}
+{hitWord=https://mvnrepository.com/artifact/org.apache.commons/commons-compress}
+{hitWord=https://mvnrepository.com/artifact/commons-io/commons-io}
+{hitWord=https://mvnrepository.com/artifact/org.apache.commons/commons-collections4}
+风险内容位置：
+    CommitId: c340626fa81e16aca52f5e75e46e62d11a0e8611
+    文件名：src/main/java/org/corgi/consumer/sourcedownload/constants/CommonConstant.java
+    文件行：2
+风险内容：
+    package org.corgi.consumer.sourcedownload.constants;
+    
+    public class CommonConstant {
+        /**
+         * 工作目录
+         */
+        public static final String WORK_SPACE_DIR = "/tmp/codeinsightsearch/";
+        /**
+         * 外网下载源码默认保存路径
+         */
+        public static final String TMP_PACKAGE_DIR = WORK_SPACE_DIR + "package/";
+        /**
+         * 本地打包操作默认执行路径
+         */
+        public static final String TMP_REPACKAGE_DIR = "/tmp/codeinsightsearch/repackage/";
+        public static final String ZIP_SUFFIX = ".zip";
+        public static final String GIT_TAG_ZIP_DOWNLOAD_URL_FORMAT = "https://github.com/%s/archive/refs/tags/%s" + ZIP_SUFFIX;
+        public static final String GIT_BRANCH_NAME_ZIP_DOWNLOAD_URL_FORMAT = "https://github.com/%s/archive/refs/heads/%s" + ZIP_SUFFIX;
+        public static final String TGZ_SUFFIX = ".tar.gz";
+        public static final String GIT_TAG_TGZ_DOWNLOAD_URL_FORMAT = "https://github.com/%s/archive/refs/tags/%s" + TGZ_SUFFIX;
+        public static final String SEVEN_Z_SUFFIX = ".7z";
+        public static final String SEVEN_Z_SUFFIX_AFTER_TAR = ".tar.7z";
+        /**
+         * 代码压缩包OSS存储格式: codeinsightsearch/source/{仓库来源}/{仓库名}/src_package_{压缩包编号}.7z
+         */
+        public static final String SOURCE_PACKAGE_OSS_ROOT = "codeinsightsearch/source/";
+        public static final String SOURCE_PACKAGE_OSS_KEY_FORMAT = SOURCE_PACKAGE_OSS_ROOT + "%s/%s/src_package_%d" + SEVEN_Z_SUFFIX;
+        public static final String SOURCE_PACKAGE_VERSION_OSS_KEY_FORMAT = SOURCE_PACKAGE_OSS_ROOT + "%s/%s/src_package_%s_%d" + SEVEN_Z_SUFFIX;
+        /**
+         * 代码压缩包缓存OSS存储格式: codeinsightsearch/cache/{仓库来源}/{仓库名}/{SOURCE_INFO_ID}.{SUFFIX}
+         */
+        public static final String SOURCE_PACKAGE_CACHE_OSS_ROOT = "codeinsightsearch/cache/";
+        public static final String SOURCE_PACKAGE_CACHE_OSS_KEY_FORMAT = SOURCE_PACKAGE_CACHE_OSS_ROOT + "%s/%s/%s%s";
+        /**
+         * 每次定时任务搜索的待下载SOURCE_INFO任务数量
+         */
+        public static final int PRE_TIMER_SOURCE_INFO_TASK = 200;
+        /**
+         * 单个压缩包最大50M
+         */
+        public static final int MAX_PACKAGE_SIZE = 50 * 1024 * 1024;
+        /**
+         * 单文件最大50M
+         */
+        public static final int MAX_FILE_SIZE = 10 * 1024 * 1024;
+        public static final String GITHUB_MAIN_BRANCH_NAME = "main";
+        public static final String GITHUB_MASTER_BRANCH_NAME = "master";
+    
+        public static final int MAX_IRONMAN_TASK_INSTANCE = 1;
+    
+    
+        public static final String SOURCE_CONTENT_HASH_URI_PREFIX = "sca/content_hash_uri";
+    }
+    
+风险细节：
+    敏感类型：URL地址(url)
+    敏感细节：{hitWord=https://github.com/%s/archive/refs/tags/%s}
+{hitWord=https://github.com/%s/archive/refs/heads/%s}
+{hitWord=https://github.com/%s/archive/refs/tags/%s}
+风险内容位置：
+    CommitId: c340626fa81e16aca52f5e75e46e62d11a0e8611
+    文件名：src/main/java/org/corgi/consumer/sourcedownload/utils/CommonConstant.java
+    文件行：2
+风险内容：
+    package org.corgi.consumer.sourcedownload.utils;
+    
+    /**
+     * @author fxt
+     * @version : CommonConstant.java, v 0.1 2021/12/4 1:32 上午 fxt Exp $
+     */
+    public class CommonConstant {
+        /**
+         * 工作目录
+         */
+        public static final String WORK_SPACE_DIR = "/tmp/codeinsightsearch/";
+        /**
+         * 外网下载源码默认保存路径
+         */
+        public static final String TMP_PACKAGE_DIR = WORK_SPACE_DIR + "package/";
+        /**
+         * 本地打包操作默认执行路径
+         */
+        public static final String TMP_REPACKAGE_DIR = "/tmp/codeinsightsearch/repackage/";
+        public static final String ZIP_SUFFIX = ".zip";
+        public static final String GIT_TAG_ZIP_DOWNLOAD_URL_FORMAT = "https://github.com/%s/archive/refs/tags/%s" + ZIP_SUFFIX;
+        public static final String GIT_BRANCH_NAME_ZIP_DOWNLOAD_URL_FORMAT = "https://github.com/%s/archive/refs/heads/%s" + ZIP_SUFFIX;
+        public static final String TGZ_SUFFIX = ".tar.gz";
+        public static final String GIT_TAG_TGZ_DOWNLOAD_URL_FORMAT = "https://github.com/%s/archive/refs/tags/%s" + TGZ_SUFFIX;
+        public static final String SEVEN_Z_SUFFIX = ".7z";
+        public static final String SEVEN_Z_SUFFIX_AFTER_TAR = ".tar.7z";
+        /**
+         * 代码压缩包OSS存储格式: codeinsightsearch/source/{仓库来源}/{仓库名}/src_package_{压缩包编号}.7z
+         */
+        public static final String SOURCE_PACKAGE_OSS_ROOT = "codeinsightsearch/source/";
+        public static final String SOURCE_PACKAGE_OSS_KEY_FORMAT = SOURCE_PACKAGE_OSS_ROOT + "%s/%s/src_package_%d" + SEVEN_Z_SUFFIX;
+        public static final String SOURCE_PACKAGE_VERSION_OSS_KEY_FORMAT = SOURCE_PACKAGE_OSS_ROOT + "%s/%s/src_package_%s_%d" + SEVEN_Z_SUFFIX;
+        /**
+         * 代码压缩包缓存OSS存储格式: codeinsightsearch/cache/{仓库来源}/{仓库名}/{SOURCE_INFO_ID}.{SUFFIX}
+         */
+        public static final String SOURCE_PACKAGE_CACHE_OSS_ROOT = "codeinsightsearch/cache/";
+        public static final String SOURCE_PACKAGE_CACHE_OSS_KEY_FORMAT = SOURCE_PACKAGE_CACHE_OSS_ROOT + "%s/%s/%s%s";
+        /**
+         * 每次定时任务搜索的待下载SOURCE_INFO任务数量
+         */
+        public static final int PRE_TIMER_SOURCE_INFO_TASK = 200;
+        /**
+         * 单个压缩包最大50M
+         */
+        public static final int MAX_PACKAGE_SIZE = 50 * 1024 * 1024;
+        /**
+         * 单文件最大50M
+         */
+        public static final int MAX_FILE_SIZE = 10 * 1024 * 1024;
+        public static final String GITHUB_MAIN_BRANCH_NAME = "main";
+        public static final String GITHUB_MASTER_BRANCH_NAME = "master";
+    
+        public static final int MAX_IRONMAN_TASK_INSTANCE = 1;
+    
+        public static final String COMMIT_FILES_URI_PREFIX = "sca/commitFiles";
+    }
+    
+风险细节：
+    敏感类型：URL地址(url)
+    敏感细节：{hitWord=https://github.com/%s/archive/refs/tags/%s}
+{hitWord=https://github.com/%s/archive/refs/heads/%s}
+{hitWord=https://github.com/%s/archive/refs/tags/%s}

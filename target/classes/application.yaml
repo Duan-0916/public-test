@@ -1,0 +1,20 @@
+server:
+  port: 8084
+
+cloud:
+  aws:
+    region:
+      static: us-east-1
+      auto: false
+    credentials:
+      access-key: AKIAXPXCEZDPQBZTPEE2
+      secret-key: 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
+
+
+download:
+  tools:
+    framework-jar-path: /Users/liyang/tmp/test/test_download/cubesugar-framework-cli.jar
+    exec-jar-path: /Users/liyang/code/cubesugar_ant/checker/target/dist
+  task:
+    name: codeinsightsearch-download
+
